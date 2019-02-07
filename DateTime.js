@@ -3,11 +3,15 @@
 var assign = require('object-assign'),
 	PropTypes = require('prop-types'),
 	createClass = require('create-react-class'),
-	moment = require('moment').default,
+	moment = require('moment'),
 	React = require('react'),
 	CalendarContainer = require('./src/CalendarContainer'),
 	onClickOutside = require('react-onclickoutside').default
 	;
+
+if (typeof moment !== 'function') {
+	moment = moment.default;
+}
 
 var viewModes = Object.freeze({
 	YEARS: 'years',

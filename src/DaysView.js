@@ -2,8 +2,12 @@
 
 var React = require('react'),
 	createClass = require('create-react-class'),
-	moment = require('moment').default
+	moment = require('moment')
 	;
+
+if (typeof moment !== 'function' ) {
+	moment = moment.default;
+}
 
 var DateTimePickerDays = createClass({
 	render: function() {

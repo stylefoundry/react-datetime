@@ -64,11 +64,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var assign = __webpack_require__(1),
 		PropTypes = __webpack_require__(2),
 		createClass = __webpack_require__(11),
-		moment = __webpack_require__(16).default,
+		moment = __webpack_require__(16),
 		React = __webpack_require__(12),
 		CalendarContainer = __webpack_require__(17),
 		onClickOutside = __webpack_require__(22).default
 		;
+
+	if (typeof moment !== 'function') {
+		moment = moment.default;
+	}
 
 	var viewModes = Object.freeze({
 		YEARS: 'years',
@@ -2804,8 +2808,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var React = __webpack_require__(12),
 		createClass = __webpack_require__(11),
-		moment = __webpack_require__(16).default
+		moment = __webpack_require__(16)
 		;
+
+	if (typeof moment !== 'function' ) {
+		moment = moment.default;
+	}
 
 	var DateTimePickerDays = createClass({
 		render: function() {

@@ -5,6 +5,11 @@ var React = require('react'),
 	moment = require('moment')
 	;
 
+// Fix for newer babel versions
+if (typeof moment !== 'function') {
+	moment = moment.default;
+}
+
 var DateTimePickerDays = createClass({
 	render: function() {
 		var footer = this.renderFooter(),

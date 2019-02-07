@@ -1,5 +1,5 @@
 /*
-react-datetime v2.16.2
+react-datetime v2.16.3
 https://github.com/YouCanBookMe/react-datetime
 MIT: https://github.com/YouCanBookMe/react-datetime/raw/master/LICENSE
 */
@@ -107,6 +107,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		},
 
 		getInitialState: function() {
+			this.checkTZ( this.props );
+			
 			var state = this.getStateFromProps( this.props );
 
 			if ( state.open === undefined )
@@ -114,8 +116,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			state.currentView = this.props.dateFormat ?
 				(this.props.viewMode || state.updateOn || viewModes.DAYS) : viewModes.TIME;
-
-			this.checkTZ( this.props );
 
 			return state;
 		},
@@ -2806,6 +2806,11 @@ return /******/ (function(modules) { // webpackBootstrap
 		createClass = __webpack_require__(11),
 		moment = __webpack_require__(16)
 		;
+
+	// Fix for newer babel versions
+	if (typeof moment !== 'function') {
+		moment = moment.default;
+	}
 
 	var DateTimePickerDays = createClass({
 		render: function() {

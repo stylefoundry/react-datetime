@@ -2804,13 +2804,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var React = __webpack_require__(12),
 		createClass = __webpack_require__(11),
-		moment = __webpack_require__(16)
+		moment = __webpack_require__(16).default
 		;
-
-	// Fix for newer babel versions
-	if (typeof moment !== 'function') {
-		moment = moment.default;
-	}
 
 	var DateTimePickerDays = createClass({
 		render: function() {

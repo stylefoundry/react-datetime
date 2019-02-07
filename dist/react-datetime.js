@@ -64,7 +64,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var assign = __webpack_require__(1),
 		PropTypes = __webpack_require__(2),
 		createClass = __webpack_require__(11),
-		moment = __webpack_require__(16),
+		moment = __webpack_require__(16).default,
 		React = __webpack_require__(12),
 		CalendarContainer = __webpack_require__(17),
 		onClickOutside = __webpack_require__(22).default
